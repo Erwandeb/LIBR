@@ -60,7 +60,7 @@ Pour faire tourner ce projet, vous aurez besoin de NodeJS et de télécharger ce
 - Ouvrir le terminal de commande de votre IDE
 - NPM Install 
 - NPM RUN dev:server 
-- Le serveur doit se lancer et tourner sur votre serveur local:3001
+- Le serveur doit se lancer et tourner sur votre serveur local:5000
 
 2)Front end : 
 - Ouvrir le terminal de commande de votre IDE
