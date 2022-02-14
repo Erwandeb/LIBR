@@ -5,9 +5,9 @@
 }
 
 $main-color : #454545;
-$background-color :#f7f7f7;
+$second-color :#F2F9EF;
 $bacground-green:rgb(59, 150, 106);
-$shadow : 6px 4px 0px 0px #DBDBDB;
+$shadow : 2px 2px 3px 1px #a02b2b;
 $border : 5px solid $main-color;
 
 body, html{
@@ -48,6 +48,12 @@ li{
     font-weight: lighter;
     color: $main-color;
     list-style-type: none;
+}
+
+a{
+    border-radius: 30px;
+    border: none;
+    font-family: 'Rhodium Libre', serif;
 }
 
 @media screen and (max-width:1024px){
