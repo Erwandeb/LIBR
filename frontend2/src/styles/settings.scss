@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$main-color : #454545;
+$background-color :#f7f7f7;
+$bacground-green:rgb(59, 150, 106);
+$shadow : 6px 4px 0px 0px #DBDBDB;
+$border : 5px solid $main-color;
+
+body, html{
+    font-family: 'Rhodium Libre', serif;
+    //background-color: $background-color;
+    background-color: $bacground-green;
+    height: auto;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1{
+    font-size: 48px;
+    color: $main-color;
+}
+
+h2{
+    font-size: 36px;
+    color: $main-color;
+}
+h3{
+    font-size: 28px;
+    color: $main-color;
+}
+h4{
+    font-size: 22px;
+    color: $main-color;
+}
+
+p{
+    font-size: 26px;
+    font-weight: lighter;
+    color: $main-color;
+}
+
+li{
+    font-size: 17px;
+    font-weight: lighter;
+    color: $main-color;
+    list-style-type: none;
+}
+
+@media screen and (max-width:1024px){
+    h1{
+        font-size: 36px;
+        color: $main-color;
+    }
+    
+    h2{
+        font-size: 28px;
+        color: $main-color;
+    }
+    
+    p{
+        font-size: 18px;
+        font-weight: lighter;
+        color: $main-color;
+    }
+    
+    li{
+        font-size: 18px;
+        font-weight: lighter;
+        color: $main-color;
+        list-style-type: none;
+    }
+    a{
+        font-size: 18px;
+        font-weight: lighter;
+        color: $main-color;
+    }
+}
+@media screen and (max-width:426px){
+    h1{
+        font-size: 28px;
+        color: $main-color;
+    }
+    
+    h2{
+        font-size: 22px;
+        color: $main-color;
+    }
+    
+    p{
+        font-size: 14px;
+        font-weight: lighter;
+        color: $main-color;
+    }
+    
+    li{
+        font-size: 14px;
+        font-weight: lighter;
+        color: $main-color;
+        list-style-type: none;
+    }
+
+    a{
+        font-size: 14px;
+        font-weight: lighter;
+        color: $main-color;
+    }
+}
