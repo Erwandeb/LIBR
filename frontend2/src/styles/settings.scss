@@ -55,6 +55,16 @@ a{
     border: none;
     font-family: 'Rhodium Libre', serif;
 }
+button{
+    border-radius: 30px;
+    border: none;
+    font-family: 'Rhodium Libre', serif;
+    background-color: rgba(59, 150, 106, 0.295);
+}
+
+input{
+    background-color:#4545452c ;
+}
 
 @media screen and (max-width:1024px){
     h1{

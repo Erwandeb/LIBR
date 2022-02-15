@@ -4,8 +4,8 @@ import Home from './pages/Home';
 import Notfound from './pages/Notfound';
 import{BrowserRouter , Routes, Route} from "react-router-dom"
 import Authentification from './pages/Authentification';
-import Signin from "./components/SignIn"
-import Signup from './components/SignUp';
+import SignInform from './components/SignInform';
+import SignUpForm from './components/SignUpForm';
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         <Route path="/"  element={<Home/>} />
 
         <Route path="/Authentification"  element={<Authentification/>} >
-          <Route path="/Authentification/signin"  element={<Signin/>} />
-          <Route path="/Authentification/signup"  element={<Signup/>} />
+          <Route path="/Authentification/signin"  element={<SignInform/>} />
+          <Route path="/Authentification/signup"  element={<SignUpForm/>} />
         </Route>
 
         <Route path="*" element={<Notfound/>} />
