@@ -1,5 +1,7 @@
 # Bienvenue sur LIBR
 
+:warning: Ce projet est en cours de développement !
+
 Il s'agit d'un réseau social basique permettant de voir les posts d'autres utilisateurs et de s'abonner a eux.
 Grâce à React et la technologie des hooks, la navigation et le transfert des données est ultra rapide.
 Pour le transfert les datas entre les composants, j'utilise le state manager REDUX. 
