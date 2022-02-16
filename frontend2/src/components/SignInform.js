@@ -2,31 +2,26 @@ import React, {useState} from 'react';
 
 
 
-
-
 const SignInform = () => {
 
-
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const  handleLogin =(e)=>{
         e.preventDefault();
     }
 
-
-
     return (
         <div className='signin-form'>
             <h2>Connectez vous :</h2>
               <form action="" onSubmit={handleLogin}>
                 <div className="input-wrapper">
-                    <label htmlFor="pseudo">Username</label>
+                    <label htmlFor="email">Email</label>
                     <input 
-                        type="text" 
-                        id="username"
-                        onChange={(e)=>setUsername(e.target.value)}
-                        value={username}
+                        type="email" 
+                        id="email"
+                        onChange={(e)=>setEmail(e.target.value)}
+                        value={email}
                         minLength="2"
                         maxLength="15"
                     />
@@ -42,7 +37,6 @@ const SignInform = () => {
                             maxLength="15"
                         />
                 </div>
-        
                 <div id="identification-error"></div>
                 <button type="submit" className="sign-in-button">Sign in</button>
             </form>
