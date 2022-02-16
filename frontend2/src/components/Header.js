@@ -4,6 +4,8 @@ import Home from '../pages/Home';
 import Authentification from '../pages/Authentification';
 import { NavLink } from 'react-router-dom';
 
+
+// Ajouter Uid
 const Header = () => {
     return (
         <div className='header'>

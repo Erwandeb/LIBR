@@ -1,6 +1,6 @@
 .signin-form{
     width: 100%;
-    height: 75vh;
+    height: 650px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -13,7 +13,7 @@
     form{
         background-color:$second-color;
         border-radius: 30px;
-        height: 50%;
+        height: 360px;
         width: 500px;
         display: flex;
         align-items: center;
@@ -41,8 +41,6 @@
                 font-size: 16px;
             }
         }
-
-
         .sign-in-button{
             border-radius: 30px;
             width: 300px;

@@ -14,14 +14,18 @@ function App() {
 
     <BrowserRouter>
       <Routes>
+
         <Route path="/"  element={<Home/>} />
 
         <Route path="/Authentification"  element={<Authentification/>} >
           <Route path="/Authentification/signin"  element={<SignInform/>} />
           <Route path="/Authentification/signup"  element={<SignUpForm/>} />
         </Route>
+
         <Route path="/Main"  element={<Main/>} />
+
         <Route path="*" element={<Notfound/>} />
+        
       </Routes>
     </BrowserRouter>
     </div>

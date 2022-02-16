@@ -12,23 +12,22 @@ const SignInform = () => {
 
         axios({
             method: "post",
-            url:`${process.env.REACT_APP_API_URL}api/v1/user/login`,
+            url:`${process.env.REACT_APP_API_URL}api/user/login`,
             data: {
-                 email:username,
+                email:email,
                 password:password,
             },
         })
         .then((res)=>{
             localStorage.setItem("token", res.data.body.token);
-            window.location='/profil';
+            window.location='/Main';
         })
         .catch((err) => {
-            identificationError.innerHTML = "Vos identifiants sont incorrects !";
+            //identificationError.innerHTML = "Vos identifiants sont incorrects !";
             console.log(err.data);
         })
     
-
-        window.location='/Main';
+        //window.location='/Main';
     };
 
     return (
