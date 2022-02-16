@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import axios from 'axios';
 
 
 const SignInform = () => {
@@ -7,9 +7,29 @@ const SignInform = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const  handleLogin =(e)=>{
+    const  handleLogin = (e) =>{
         e.preventDefault();
-    }
+
+        axios({
+            method: "post",
+            url:`${process.env.REACT_APP_API_URL}api/v1/user/login`,
+            data: {
+                 email:username,
+                password:password,
+            },
+        })
+        .then((res)=>{
+            localStorage.setItem("token", res.data.body.token);
+            window.location='/profil';
+        })
+        .catch((err) => {
+            identificationError.innerHTML = "Vos identifiants sont incorrects !";
+            console.log(err.data);
+        })
+    
+
+        window.location='/Main';
+    };
 
     return (
         <div className='signin-form'>
