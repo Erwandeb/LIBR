@@ -10,24 +10,30 @@ const SignInform = () => {
     const  handleLogin = (e) =>{
         e.preventDefault();
 
+       const identificationError = document.getElementById("identification-error");
+
         axios({
             method: "post",
             url:`${process.env.REACT_APP_API_URL}api/user/login`,
+            withCredentials:true,
             data: {
                 email:email,
                 password:password,
             },
         })
         .then((res)=>{
-            localStorage.setItem("token", res.data.body.token);
-            window.location='/Main';
+            if(res.data.errors){
+                console.log("error", res.data.errors)
+            }else{
+                localStorage.setItem("token", res.data.user);
+                window.location='/Main';
+                console.log(res.data.body.token)
+            }
         })
         .catch((err) => {
-            //identificationError.innerHTML = "Vos identifiants sont incorrects !";
-            console.log(err.data);
+            identificationError.innerHTML = "Vos identifiants sont incorrects !";
+            console.log("hello error", err);
         })
-    
-        //window.location='/Main';
     };
 
     return (
@@ -42,7 +48,7 @@ const SignInform = () => {
                         onChange={(e)=>setEmail(e.target.value)}
                         value={email}
                         minLength="2"
-                        maxLength="15"
+                        maxLength="50"
                     />
                 </div>
                 <div className="input-wrapper">
