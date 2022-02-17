@@ -5,8 +5,8 @@ import { UidContext } from './services/appContext';
 import axios from 'axios';
 import React from 'react';
 //const token = request.COOKIES.get('jwt')
-//const token = sessionStorage.getItem("jwt");
-
+const token = sessionStorage.getItem("jwt");
+//console.log(token)
 
 function App() {
 
@@ -22,10 +22,11 @@ function App() {
       })
       .then((res) =>{
         console.log(res.data.user);
+        console.log("bonjour");
         setUid( res.data.user);
       })
       .catch(err => console.log(err, "no token from front"));
-    }
+    };
     fetchToken();
     //if(uid)dispatch(getUser())
   },[uid]);

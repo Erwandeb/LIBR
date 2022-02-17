@@ -36,6 +36,8 @@ const SignInform = () => {
         })
     };
 
+    const token = sessionStorage.getItem("jwt");
+    console.log(token)
     return (
         <div className='signin-form'>
             <h2>Connectez vous :</h2>
