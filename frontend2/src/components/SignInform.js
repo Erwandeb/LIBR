@@ -24,8 +24,9 @@ const SignInform = () => {
         .then((res)=>{
             if(res.data.errors){
                 console.log("error", res.data.errors)
-            }else{
-                //localStorage.setItem("token", res.data.user);
+            } else{
+                localStorage.setItem("token", res.data.user);
+                console.log("requete complete")
                 window.location='/Main';
             }
         })

@@ -3,28 +3,34 @@ import './App.css';
 import Routing from './routes/Route';
 import { UidContext } from './services/appContext';
 import axios from 'axios';
-
+import React from 'react';
 //const token = request.COOKIES.get('jwt')
-
 //const token = sessionStorage.getItem("jwt");
+
+
 function App() {
 
-  const [uid, setUid] = useState(null);
+ 
+  const [uid, setUid] = useState();
 
   useEffect( ()=>{
-    const fetchToken = () => {
+    const fetchToken = async () => {
       axios({
-          method: "get",
+          method: "GET",
           url: `${process.env.REACT_APP_API_URL}jwtid`,
           withCredentials:true,
       })
-      .then((res) => {console.log(res)})
+      .then((res) =>{
+        console.log(res.data.user);
+        setUid( res.data.user);
+      })
       .catch(err => console.log(err, "no token from front"));
     }
     fetchToken();
     //if(uid)dispatch(getUser())
   },[uid]);
   
+  console.log("uid", uid)
 
   return (
     <div className="App">
