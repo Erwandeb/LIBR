@@ -7,6 +7,7 @@ const SignInform = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+
     const  handleLogin = (e) =>{
         e.preventDefault();
 
@@ -25,8 +26,10 @@ const SignInform = () => {
             if(res.data.errors){
                 console.log("error", res.data.errors)
             } else{
-                localStorage.setItem("token", res.data.user);
-                console.log("requete complete")
+                console.log(res.data.user)
+                //localStorage.setItem("token", res.data.user);
+                //sessionStorage.setItem("")
+                // console.log("requete complete")
                 window.location='/Main';
             }
         })
@@ -36,8 +39,9 @@ const SignInform = () => {
         })
     };
 
-    const token = sessionStorage.getItem("jwt");
-    console.log(token)
+    
+ 
+
     return (
         <div className='signin-form'>
             <h2>Connectez vous :</h2>

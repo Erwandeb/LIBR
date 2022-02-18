@@ -5,6 +5,7 @@ import Authentification from '../pages/Authentification';
 import { NavLink } from 'react-router-dom';
 import { UidContext } from '../services/appContext';
 
+
 // Ajouter Uid
 const Header = () => {
 
@@ -23,12 +24,7 @@ const Header = () => {
                         </NavLink>
                     </div>
                     <div className='button-ath-and-co'>
-                        <NavLink to="/Authentification/signin">
-                            I AM CONNECTED
-                        </NavLink>
-                        <NavLink to="/Authentification/signup">
-                            S'inscrire BIS REPETITA
-                        </NavLink>
+                        <i className="fa-solid fa-right-from-bracket"></i>
                     </div>
                 </>
             ):(
