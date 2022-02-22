@@ -37,8 +37,8 @@ const SignUpForm = () => {
                 console.log("error", res.data.errors)
             } else{
                 console.log(res.data.user)
-                //localStorage.setItem("token", res.data.user);
-                //sessionStorage.setItem("")
+                // localStorage.setItem("token", res.data.user);
+                // sessionStorage.setItem("")
                 // console.log("requete complete")
                 window.location='/Main';
             }
@@ -61,7 +61,7 @@ const SignUpForm = () => {
                     onChange={(e)=>setPseudo(e.target.value)}
                     value={pseudo}
                     minLength="2"
-                    maxLength="15"
+                    maxLength="30"
                 />
                 <p id="pseudoError"></p>
             </div>
@@ -73,7 +73,7 @@ const SignUpForm = () => {
                         onChange={(e)=>setNom(e.target.value)}
                         value={nom}
                         minLength="2"
-                        maxLength="15"
+                        maxLength="30"
                     />
                 <p id="nomError"></p>
             </div>
@@ -85,7 +85,7 @@ const SignUpForm = () => {
                         onChange={(e)=>setPrenom(e.target.value)}
                         value={prenom}
                         minLength="2"
-                        maxLength="15"
+                        maxLength="30"
                     />
                 <p id="nomError"></p>
             </div>
@@ -97,7 +97,7 @@ const SignUpForm = () => {
                         onChange={(e)=>setEmail(e.target.value)}
                         value={email}
                         minLength="2"
-                        maxLength="15"
+                        maxLength="30"
                     />
                 <p id="emailError"></p>
             </div>
@@ -109,7 +109,7 @@ const SignUpForm = () => {
                         onChange={(e)=>setPassword(e.target.value)}
                         value={password}
                         minLength="2"
-                        maxLength="15"
+                        maxLength="30"
                     />
                 <p id="passwordError"></p>
             </div>
