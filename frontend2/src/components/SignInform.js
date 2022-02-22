@@ -40,8 +40,6 @@ const SignInform = () => {
     };
 
     
- 
-
     return (
         <div className='signin-form'>
             <h2>Connectez vous :</h2>

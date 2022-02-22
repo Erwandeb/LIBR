@@ -10,7 +10,7 @@ import { UidContext } from '../services/appContext';
 const Header = () => {
 
     const uid = useContext(UidContext);
-    console.log(uid)
+    console.log("hello",uid)
    
     return (
     <div className='header'>
@@ -25,6 +25,12 @@ const Header = () => {
                     </div>
                     <div className='button-ath-and-co'>
                         <i className="fa-solid fa-right-from-bracket"></i>
+                        <NavLink to="/Authentification/signin">
+                            J'ai un UID
+                        </NavLink>
+                        <NavLink to="/Authentification/signup">
+                           OUI c'est vrai
+                        </NavLink>
                     </div>
                 </>
             ):(
