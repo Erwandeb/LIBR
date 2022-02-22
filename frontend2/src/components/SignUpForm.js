@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import axios from 'axios';
+
 
 const SignUpForm = () => {
 
@@ -10,6 +12,41 @@ const SignUpForm = () => {
 
     const  handleLogin = (e)=>{
         e.preventDefault();
+
+        const identificationError = document.getElementById("identification-error");
+        const pseudoError = document.getElementById('pseudoError');
+        const nomError = document.getElementById('nomError');
+        const prenomError = document.getElementById('prenomError');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+
+        axios({
+            method: "post",
+            url:`${process.env.REACT_APP_API_URL}api/user/register`,
+            withCredentials:true,
+            data: {
+                pseudo:pseudo,
+                nom:nom,
+                prenom,
+                email:email,
+                password:password,
+            },
+        })
+        .then((res)=>{
+            if(res.data.errors){
+                console.log("error", res.data.errors)
+            } else{
+                console.log(res.data.user)
+                //localStorage.setItem("token", res.data.user);
+                //sessionStorage.setItem("")
+                // console.log("requete complete")
+                window.location='/Main';
+            }
+        })
+        .catch((err) => {
+            identificationError.innerHTML = "Vos identifiants sont incorrects !";
+            console.log("hello error", err);
+        })
     }
 
     return (
@@ -26,9 +63,10 @@ const SignUpForm = () => {
                     minLength="2"
                     maxLength="15"
                 />
+                <p id="pseudoError"></p>
             </div>
             <div className="input-wrapper">
-                <label htmlFor="nom">Nom</label >
+                <label htmlFor="nom">Nom</label>
                     <input 
                         type="text" 
                         id="nom"
@@ -37,6 +75,7 @@ const SignUpForm = () => {
                         minLength="2"
                         maxLength="15"
                     />
+                <p id="nomError"></p>
             </div>
             <div className="input-wrapper">
                 <label htmlFor="prenom">Prénom</label >
@@ -48,6 +87,7 @@ const SignUpForm = () => {
                         minLength="2"
                         maxLength="15"
                     />
+                <p id="nomError"></p>
             </div>
             <div className="input-wrapper">
                 <label htmlFor="email">E-mail</label >
@@ -59,6 +99,7 @@ const SignUpForm = () => {
                         minLength="2"
                         maxLength="15"
                     />
+                <p id="emailError"></p>
             </div>
             <div className="input-wrapper">
                 <label htmlFor="password">Password</label >
@@ -70,6 +111,7 @@ const SignUpForm = () => {
                         minLength="2"
                         maxLength="15"
                     />
+                <p id="passwordError"></p>
             </div>
     
             <div id="identification-error"></div>

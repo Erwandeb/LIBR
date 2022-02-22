@@ -8,7 +8,7 @@ import {UidContext} from './services/AppContext';
 
 function App() {
 
-  const [uid,setUid] = useState(null);
+  const [uid,setUid] = useState();
 
   useEffect( ()=>{
     const fetchToken = async () => {

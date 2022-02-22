@@ -3,15 +3,33 @@ import logo from "../../src/public/medias/logo.png";
 import Home from '../pages/Home';
 import Authentification from '../pages/Authentification';
 import { NavLink } from 'react-router-dom';
-import { UidContext } from '../services/appContext';
-
+import { UidContext } from '../services/AppContext';
+import axios from 'axios';
 
 // Ajouter Uid
 const Header = () => {
 
     const uid = useContext(UidContext);
-    console.log("hello",uid)
+    console.log("hello", uid)
    
+    const handleLogout = (e) =>{
+        axios({
+            method: "post",
+            url:`${process.env.REACT_APP_API_URL}api/user/logout`,
+            withCredentials:true,
+        })
+        .then((res)=>{
+            if(res.data.errors){
+                console.log("error", res.data.errors)
+            } else{
+                window.location='/';
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }
+
     return (
     <div className='header'>
         {
@@ -19,17 +37,13 @@ const Header = () => {
             (
                 <>
                     <div className='logo'>
-                        <NavLink to="/">
+                        <NavLink to="./">
                             <img src={logo} alt="Logo de libr"/>
                         </NavLink>
                     </div>
                     <div className='button-ath-and-co'>
-                        <i className="fa-solid fa-right-from-bracket"></i>
-                        <NavLink to="/Authentification/signin">
-                            J'ai un UID
-                        </NavLink>
-                        <NavLink to="/Authentification/signup">
-                           OUI c'est vrai
+                        <NavLink to="/" onClick={handleLogout}>
+                           Déconnexion
                         </NavLink>
                     </div>
                 </>
