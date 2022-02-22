@@ -18,19 +18,17 @@ function App() {
           withCredentials:true,
       })
       .then((res) =>{
-        //console.log(res.data.user);
-        console.log("res.data",res.data);
+        console.log("res.data", res.data);
         setUid(res.data.user);
       })
       .catch((err) => console.log("no token from front"));
-      console.log("test", uid)
     };
     fetchToken();
-    console.log("test", uid)
+
     //if(uid)dispatch(getUser())
   },[uid]);
   
-
+  
   return (
     <div className="App">
       <UidContext.Provider value={uid}>
@@ -39,5 +37,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
