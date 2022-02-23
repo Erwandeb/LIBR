@@ -9,10 +9,11 @@ import {getUser} from './actions/user.actions';
 
 function App() {
 
-  const dispatch = useDispatch()
-  const [uid,setUid] = useState();
+  const dispatch = useDispatch();
+  const [uid, setUid] = useState();
 
-  useEffect( ()=>{
+
+  useEffect((dispatch)=>{
     const fetchToken = async () => {
       axios({
           method:"GET",
@@ -22,12 +23,16 @@ function App() {
       .then((res) =>{
         console.log("res.data", res.data);
         setUid(res.data.user);
+        window.location('/Main')
       })
       .catch((err) => console.log("no token from front"));
     };
     fetchToken();
 
-    if(uid)dispatch(getUser())
+    if(uid){
+      dispatch(getUser(uid));
+    }
+     
   },[uid]);
   
 

@@ -7,10 +7,13 @@ export const getUser = (uid) => {
         return axios 
         .get(`${process.env.REACT_APP_API_URL}/api/user/${uid}`)
         .then((res)=> {
-            dispatch({type: GET_USER, payload:res.data})
+            dispatch({
+                type: GET_USER, 
+                payload:res.data
+            })
         })
         .catch((err) => {
-            console.log(err);
+            console.log("Erreur dans Redux user.actions", err);
         })
     };
 };
