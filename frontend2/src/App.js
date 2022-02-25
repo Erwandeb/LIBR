@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
   const [uid, setUid] = useState();
 
-
+  
   useEffect((dispatch)=>{
     const fetchToken = async () => {
       axios({
@@ -25,7 +25,7 @@ function App() {
         setUid(res.data.user);
         window.location('/Main')
       })
-      .catch((err) => console.log("no token from front"));
+      .catch((err) => console.log("no token"));
     };
     fetchToken();
 
@@ -35,7 +35,6 @@ function App() {
      
   },[uid]);
   
-
   return (
     <div className="App">
       <UidContext.Provider value={uid}>
