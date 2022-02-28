@@ -9,9 +9,9 @@ import {getUser} from './actions/user.actions';
 
 function App() {
 
-  const dispatch = useDispatch();
+  
   const [uid, setUid] = useState();
-
+  const dispatch = useDispatch();
   
   useEffect((dispatch)=>{
     const fetchToken = async () => {
@@ -22,7 +22,7 @@ function App() {
       })
       .then((res) =>{
         console.log("res.data", res.data);
-        setUid(res.data.user);
+        setUid(res.data);
         window.location('/Main')
       })
       .catch((err) => console.log("no token"));
@@ -32,7 +32,6 @@ function App() {
     if(uid){
       dispatch(getUser(uid));
     }
-     
   },[uid]);
   
   return (
