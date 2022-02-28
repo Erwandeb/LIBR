@@ -8,7 +8,7 @@ const SignInform = () => {
     const [password, setPassword] = useState("");
 
 
-    const  handleLogin = (e) =>{
+    const handleLogin = (e) =>{
         e.preventDefault();
 
        const identificationError = document.getElementById("identification-error");
@@ -25,11 +25,11 @@ const SignInform = () => {
         .then((res)=>{
             if(res.data.errors){
                 console.log("error", res.data.errors)
-            } else{
+            }else{
                 console.log(res.data.user)
                 //localStorage.setItem("token", res.data.user);
-                //sessionStorage.setItem("")
-                // console.log("requete complete")
+                //sessionStorage.setItem("");
+                //console.log("requete complete");
                 window.location='/Main';
             }
         })
