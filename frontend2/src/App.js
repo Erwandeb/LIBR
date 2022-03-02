@@ -4,7 +4,7 @@ import Routing from './routes/Route';
 import axios from 'axios';
 import React from 'react';
 import {UidContext} from './services/AppContext';
-import { useDispatch } from 'react-redux';
+import {useDispatch } from 'react-redux';
 import {getUser} from './actions/user.actions';
 
 function App() {
@@ -12,7 +12,9 @@ function App() {
   
   const [uid, setUid] = useState();
   const dispatch = useDispatch();
-  
+  const useThunkDispatch = () => useDispatch();
+
+
   useEffect((dispatch)=>{
     const fetchToken = async () => {
       axios({
@@ -31,6 +33,7 @@ function App() {
 
     if(uid){
       dispatch(getUser(uid));
+  
     }
   },[uid]);
   
