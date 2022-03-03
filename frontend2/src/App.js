@@ -33,7 +33,6 @@ function App() {
 
     if(uid){
       dispatch(getUser(uid));
-  
     }
   },[uid]);
   
