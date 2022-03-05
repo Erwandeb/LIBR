@@ -10,6 +10,7 @@ import {getUser} from './actions/user.actions';
 function App() {
 
   
+  // Cecking uid if user reconnect
   const [uid, setUid] = useState();
   const dispatch = useDispatch();
   const useThunkDispatch = () => useDispatch();
@@ -36,6 +37,8 @@ function App() {
     }
   },[uid]);
   
+
+
   return (
     <div className="App">
       <UidContext.Provider value={uid}>
