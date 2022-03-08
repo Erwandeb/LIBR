@@ -10,7 +10,7 @@ import {getUser} from './actions/user.actions';
 function App() {
 
   
-  // Cecking uid if user reconnect
+  // checking uid if user reconnect
   const [uid, setUid] = useState();
   const dispatch = useDispatch();
   const useThunkDispatch = () => useDispatch();
